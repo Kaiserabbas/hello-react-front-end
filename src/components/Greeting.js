@@ -12,7 +12,8 @@ const Greeting = () => {
 
   return (
     <div>
-      <h1>Hello reviewer,</h1>
+      <h1>Welcome to Frond-End App</h1>
+      <p>This app is desgined to fetch greetings from locallay created api</p>
       <h2>{randomGreeting}</h2>
     </div>
   );
