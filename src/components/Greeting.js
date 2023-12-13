@@ -11,10 +11,16 @@ const Greeting = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Welcome to Frond-End App</h1>
-      <p>This app is desgined to fetch greetings from locallay created api</p>
-      <h2>{randomGreeting}</h2>
+    <div className="greeting-container">
+      <header className="header">
+        <h1 className="title">Welcome to Front-End App</h1>
+        <p className="subtitle">This app fetches greetings from a locally created API</p>
+      </header>
+      <main className="main-content">
+        <div className="greeting-section">
+          <h2 className="random-greeting">{randomGreeting}</h2>
+        </div>
+      </main>
     </div>
   );
 };

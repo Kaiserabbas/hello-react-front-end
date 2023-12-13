@@ -1,17 +1,15 @@
 import store from '../store';
 import { setRandomGreeting } from '../greetingsSlice';
 
+const API_URL = 'http://localhost:3000/api/v1/greetings/random';
+
 const getRandomGreeting = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/greetings/random');
-    if (!response.ok) {
-      throw new Error('Failed to fetch');
-    }
+    const response = await fetch(API_URL);
     const data = await response.json();
     store.dispatch(setRandomGreeting(data.greeting));
   } catch (error) {
-    console.error('Error fetching data:', error);
-    // Handle the error (e.g., display a message to the user)
+    console.log('Fetch Error: ', error);
   }
 };
 

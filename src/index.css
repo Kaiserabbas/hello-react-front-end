@@ -26,20 +26,43 @@ code {
     monospace;
 }
 
-div {
+.greeting-container {
   text-align: center;
   padding: 50px;
-  background-color: #f8f9fa;
+  background-image: url('./images/mountain.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  color: #6c757d;
-  font-size: 2.5em;
-  font-weight: bold;
+.header {
+  margin-bottom: 20px;
 }
 
-h2 {
-  color: #343a40;
+.title {
+  color: #fff;
+  font-size: 3.5em;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.greeting-section {
+  background-image: linear-gradient(120deg, #ff0, #008000);
+  padding: 10px 70px;
+  border-radius: 10px;
+}
+
+.random-greeting {
+  color: #fff;
   font-size: 2em;
-  font-weight: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
 }
