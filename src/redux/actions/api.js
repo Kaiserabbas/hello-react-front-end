@@ -1,13 +1,12 @@
-import store from '../store';
 import { setRandomGreeting } from '../greetingsSlice';
 
 const API_URL = 'http://localhost:3000/api/v1/greetings/random';
 
-const getRandomGreeting = async () => {
+const getRandomGreeting = () => async (dispatch) => {
   try {
     const response = await fetch(API_URL);
-    const data = await response.json();
-    store.dispatch(setRandomGreeting(data.greeting));
+    const message = await response.json();
+    dispatch(setRandomGreeting(message.greeting, message.id));
   } catch (error) {
     console.log('Fetch Error: ', error);
   }
