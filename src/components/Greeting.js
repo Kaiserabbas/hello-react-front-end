@@ -7,8 +7,12 @@ const Greeting = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getRandomGreeting();
-  }, [dispatch]);
+    dispatch(getRandomGreeting());
+  }, []); // Empty dependency array ensures this runs on mount
+
+  const handleButtonClick = () => {
+    dispatch(getRandomGreeting());
+  };
 
   return (
     <div className="greeting-container">
@@ -19,6 +23,7 @@ const Greeting = () => {
       <main className="main-content">
         <div className="greeting-section">
           <h2 className="random-greeting">{randomGreeting}</h2>
+          <button type="button" onClick={handleButtonClick}>Generate New Greeting</button>
         </div>
       </main>
     </div>
